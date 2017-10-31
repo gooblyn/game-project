@@ -77,20 +77,6 @@ Reversi.prototype.checkLegalMovement = function (x, y, mov){
   }
 };
 
-Reversi.prototype.checkTokensToTurn = function (x,y){
-  /*var x = box.x;
-  var y = box.y;*/
-  var top = this.checkTokensTop(x, y);
-  var bottom = this.checkTokensBottom(x, y);
-  var left = this.checkTokensLeft(x, y);
-  var right = this.checkTokensRight(x, y);
-  var topRight = this.checkTokensTopRight(x, y);
-  var topLeft = this.checkTokensTopLeft(x, y);
-  var downRight = this.checkTokensBottomRight(x, y);
-  var downLeft = this.checkTokensBottomLeft(x, y);
-  return top + bottom + left + right + topRight + topLeft + downRight + downLeft;
-};
-
 Reversi.prototype.checkTokensTop = function (x, y){
   var count = 0; // For counting the tokens you will turn
   var checking = true; //For knowing if you have to continue checking the boxes
@@ -103,7 +89,19 @@ Reversi.prototype.checkTokensTop = function (x, y){
       checking = false;
     }
   }
+  if (this.game.board[y-1][x].player === 0){count = 0;}
   return count;
+};
+
+Reversi.prototype.changeTokensTop = function (x, y, num){
+  console.log("hola");
+  for (var i = 0; i <= num; i++){
+    console.log("dentro del for "+i);
+    if (this.turn === "player2"){
+      console.log("cambio casilla "+x+","+y);
+      this.game.board[y-i][x].player = 2;
+    }
+  }
 };
 
 Reversi.prototype.checkTokensBottom = function (x, y){
@@ -118,6 +116,7 @@ Reversi.prototype.checkTokensBottom = function (x, y){
       checking = false;
     }
   }
+  if (this.game.board[y+1][x].player === 0){count = 0;}
   return count;
 };
 
@@ -133,6 +132,7 @@ Reversi.prototype.checkTokensLeft = function (x, y){
       checking = false;
     }
   }
+  if (this.game.board[y][x-1].player === 0){count = 0;}
   return count;
 };
 
@@ -148,6 +148,7 @@ Reversi.prototype.checkTokensRight = function (x, y){
       checking = false;
     }
   }
+  if (this.game.board[y][x+1].player === 0){count = 0;}
   return count;
 };
 
@@ -164,6 +165,7 @@ Reversi.prototype.checkTokensTopRight = function (x, y){
       checking = false;
     }
   }
+  if (this.game.board[y-1][x+1].player === 0){count = 0;}
   return count;
 };
 
@@ -180,6 +182,7 @@ Reversi.prototype.checkTokensBottomRight = function (x, y){
       checking = false;
     }
   }
+  if (this.game.board[y+1][x+1].player === 0){count = 0;}
   return count;
 };
 
@@ -196,6 +199,7 @@ Reversi.prototype.checkTokensTopLeft = function (x, y){
       checking = false;
     }
   }
+  if (this.game.board[y-1][x-1].player === 0){count = 0;}
   return count;
 };
 
@@ -212,5 +216,26 @@ Reversi.prototype.checkTokensBottomLeft = function (x, y){
       checking = false;
     }
   }
+  if (this.game.board[y+1][x-1].player === 0){count = 0;}
   return count;
+};
+
+Reversi.prototype.checkTokensToTurn = function (x,y){
+  /*var x = box.x;
+  var y = box.y;*/
+  // Checking and changing tokens to the top.
+  var top = this.checkTokensTop(x, y);
+  if (top > 0){
+    this.changeTokensTop(x, y, top);
+  }
+
+  // Checking and changin tokens to the bottom.
+  var bottom = this.checkTokensBottom(x, y);
+  var left = this.checkTokensLeft(x, y);
+  var right = this.checkTokensRight(x, y);
+  var topRight = this.checkTokensTopRight(x, y);
+  var topLeft = this.checkTokensTopLeft(x, y);
+  var downRight = this.checkTokensBottomRight(x, y);
+  var downLeft = this.checkTokensBottomLeft(x, y);
+  return top + bottom + left + right + topRight + topLeft + downRight + downLeft;
 };
