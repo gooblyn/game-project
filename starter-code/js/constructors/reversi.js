@@ -111,11 +111,12 @@ Reversi.prototype.changeTokensTop = function(x, y, num) {
 };
 
 Reversi.prototype.checkTokensBottom = function(x, y) {
+  var dir = "bottom";
   var count = 0; // For counting the tokens you will turn
   var checking = true; //For knowing if you have to continue checking the boxes
   if (this.game.board[y][x].player === 0) {
     while ((y < this.game.height-1) && (checking)) {
-      if (this.checkLegalMovement(x, y, "bottom")) {
+      if (this.checkLegalMovement(x, y, dir)) {
         count++;
         y++;
       } else {
@@ -143,6 +144,7 @@ Reversi.prototype.checkTokensLeft = function(x, y) {
   var count = 0; // For counting the tokens you will turn
   var checking = true; //For knowing if you have to continue checking the boxes
   if (this.game.board[y][x].player === 0) {
+
     while ((x > 0) && (checking)) {
       if (this.checkLegalMovement(x, y, "left")) {
         count++;
@@ -318,8 +320,6 @@ Reversi.prototype.changeTokensBottomLeft = function(x, y, num) {
 };
 
 Reversi.prototype.checkAndTurnTokens = function(x, y) {
-  /*var x = box.x;
-  var y = box.y;*/
   // Checking and changing tokens to the top.
   var top = this.checkTokensTop(x, y);
   if (top > 0) {

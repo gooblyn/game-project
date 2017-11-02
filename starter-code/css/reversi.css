@@ -1,14 +1,84 @@
-h1{
-  color: red;
+html {
+  background-image: url("http://www.lifewallpapers.net/data/out/368/6928247-wood-grain-wallpaper.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-.start-btn{
+.menu-container{
   width: 100%;
 }
 
+h1{
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+  font-size: 92px;
+  padding: 80px 50px;
+  text-align: center;
+  text-transform: uppercase;
+  text-rendering: optimizeLegibility;
+  color: #FFFFFF;
+  letter-spacing: .1em;
+  text-shadow:
+    -1px -1px 1px #BB6B05,
+     2px 2px 1px #BB6B05;
+}
+
+h3{
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+  font-size: 60px;
+  padding:0;
+  margin: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  text-rendering: optimizeLegibility;
+  color: #FFFFFF;
+  letter-spacing: .1em;
+}
+
 .start-btn a{
-  width: 20px;
-  height: 40px;
-  border: 2px solid green;
+  width: 300px;
+  height: 300px;
   text-decoration: none;
+  border: 0;
+  box-shadow: 0;
+  background: linear-gradient(to bottom, #BB6B05, #ED890A);
+  color: #fff;
+  padding: 20px 40px;
+  font-size: 30px;
+  border-radius: 5px;
+  margin-left: 550px;
+}
+
+#board {
+  background:#BB6B05;
+	width:430px;
+	height:410px;
+	padding:60px;
+	margin:0px auto;
+  border-radius: 84px;
+}
+
+.box {
+  background-color: #ED890A;
+	width:50px;
+	height:50px;
+	float:left;
+  border: 1px solid #BB6B05;
+  margin: 0;
+  padding: 0;
+}
+
+.play1 {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  margin:5px;
+}
+
+.play2 {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #000000;
+  margin: 5px;
 }
