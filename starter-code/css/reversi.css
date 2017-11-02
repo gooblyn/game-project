@@ -29,7 +29,15 @@ h3{
   margin: 10px;
   text-align: center;
   text-transform: uppercase;
-  text-rendering: optimizeLegibility;
+  color: #FFFFFF;
+  letter-spacing: .1em;
+}
+
+h5{
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+  font-size: 30px;
+  text-align: left;
+  text-transform: uppercase;
   color: #FFFFFF;
   letter-spacing: .1em;
 }
@@ -53,8 +61,9 @@ h3{
 	width:430px;
 	height:410px;
 	padding:60px;
-	margin:0px auto;
+	margin:0px auto 0px 400px;
   border-radius: 84px;
+  float:left;
 }
 
 .box {
@@ -81,4 +90,55 @@ h3{
   border-radius: 50%;
   background: #000000;
   margin: 5px;
+}
+
+#scores {
+	width:200px;
+	height:50px;
+	margin:0px 0px 0 auto;
+  float: right;
+}
+
+.p1 {
+  width:100px;
+  height: 50px;
+  display: flex;
+}
+
+.white {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  margin-right: 30px;
+  padding: 0px;
+  float: left;
+}
+
+.p1-num{
+  width: 30px;
+  height: 30px;
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+  float:right;
+  text-align: center;
+}
+
+.black {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #000000;
+  margin: 0px;
+}
+
+.p2-num{
+  width: 30px;
+  height: 30px;
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+  float:right;
+  text-align: center;
 }

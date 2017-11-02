@@ -7,6 +7,7 @@ var reversiGame;
 $(document).ready(function(){
   reversiGame = new Reversi("medium");
   reversiGame.newGame();
+  paintingScoreAndTurn();
   var html = '';
 
   // For each item of the array, we create a div
@@ -66,27 +67,27 @@ $(document).ready(function(){
             $(pos1).children().addClass("play2");
           }
         }
-
-
-
       }
     }
   };
 
+  function paintingScoreAndTurn(){
+    reversiGame.countingTokens();
+    $(".p1-num > p").text(reversiGame.scoreP1);
+    $(".p2-num > p").text(reversiGame.scoreP2);
+    $(".turn").text(reversiGame.turn);
+  };
+
   $(".box").click(function(){
-    console.log(reversiGame.turn);
     var pos = $(this).attr("id");
     var x = parseInt(pos.charAt(0));
     var y = parseInt(pos.charAt(1));
     reversiGame.checkAndTurnTokens(x,y);
-    reversiGame.countingTokens();
-    console.log("Player 1 score: "+reversiGame.scoreP1);
-    console.log("Player 2 score: "+reversiGame.scoreP2);
     reversiGame.turnChange();
-    console.log(reversiGame.turn);
-  //  var haveMovs = reversiGame.checkPossibleMovs();
-    //console.log(haveMovs);
-  //  if (!haveMovs){
+    paintingScoreAndTurn();
+    var haveMovs = reversiGame.checkPossibleMovs();
+    console.log(haveMovs);
+    //if (!haveMovs){
     //  reversiGame.turnChange();
       //console.log(reversiGame.turn);
   //  }
