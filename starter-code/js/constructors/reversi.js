@@ -144,7 +144,6 @@ Reversi.prototype.checkTokensLeft = function(x, y) {
   var count = 0; // For counting the tokens you will turn
   var checking = true; //For knowing if you have to continue checking the boxes
   if (this.game.board[y][x].player === 0) {
-
     while ((x > 0) && (checking)) {
       if (this.checkLegalMovement(x, y, "left")) {
         count++;
@@ -320,56 +319,46 @@ Reversi.prototype.changeTokensBottomLeft = function(x, y, num) {
 };
 
 Reversi.prototype.checkAndTurnTokens = function(x, y) {
-  // Checking and changing tokens to the top.
+  // Checking the number of tokens turning in each direction
   var top = this.checkTokensTop(x, y);
+  var bottom = this.checkTokensBottom(x, y);
+  var left = this.checkTokensLeft(x, y);
+  var right = this.checkTokensRight(x, y);
+  var topRight = this.checkTokensTopRight(x, y);
+  var topLeft = this.checkTokensTopLeft(x, y);
+  var bottomRight = this.checkTokensBottomRight(x, y);
+  var bottomLeft = this.checkTokensBottomLeft(x, y);
+
+  // Changing the tokens in each direction
   if (top > 0) {
     this.changeTokensTop(x, y, top);
   }
-
-  // Checking and changing tokens to the bottom.
-  var bottom = this.checkTokensBottom(x, y);
   if (bottom > 0) {
     this.changeTokensBottom(x, y, bottom);
   }
-
-  // Checking and changing tokens to the Left.
-  var left = this.checkTokensLeft(x, y);
   if (left > 0) {
     this.changeTokensLeft(x, y, left);
   }
-
-  // Checking and changing tokens to the right
-  var right = this.checkTokensRight(x, y);
   if (right > 0) {
     this.changeTokensRight(x, y, right);
   }
-
-  // Checking and changing tokens to the top right
-  var topRight = this.checkTokensTopRight(x, y);
   if (topRight > 0) {
     this.changeTokensTopRight(x, y, topRight);
   }
-
-  // Checking and changing tokens to the top left
-  var topLeft = this.checkTokensTopLeft(x, y);
   if (topLeft > 0) {
     this.changeTokensTopLeft(x, y, topLeft);
   }
-
-  // Checking and changing tokens to the bottom right
-  var bottomRight = this.checkTokensBottomRight(x, y);
   if (bottomRight > 0) {
     this.changeTokensBottomRight(x, y, bottomRight);
   }
-
-  // Checkinh and changing tokens to the bottom left
-  var bottomLeft = this.checkTokensBottomLeft(x, y);
   if (bottomLeft > 0) {
     this.changeTokensBottomLeft(x, y, bottomLeft);
   }
 };
 
 Reversi.prototype.countingTokens = function(){
+  this.scoreP1 = 0;
+  this.scoreP2 = 0;
   for (var i = 0; i < this.game.height; i++){
     for (var j = 0; j < this.game.width; j++){
       if (this.game.board[i][j].player === 1){

@@ -44,7 +44,6 @@ $(document).ready(function(){
         pos1 = '#'+pos;
         if(reversiGame.game.board[j][i].player === 1){
           if($(pos1).children().hasClass("play1")){
-            console.log("tengo hijo p1 "+pos);
           }
           else if ($(pos1).children().hasClass("play2")){
             $(pos1).children().removeClass("play2");
@@ -57,7 +56,6 @@ $(document).ready(function(){
         }
         if(reversiGame.game.board[j][i].player === 2){
           if($(pos1).children().hasClass("play2")){
-            console.log("tengo hijo p2 "+pos);
           }
           else if ($(pos1).children().hasClass("play1")){
             $(pos1).children().removeClass("play1");
@@ -86,14 +84,14 @@ $(document).ready(function(){
     console.log("Player 2 score: "+reversiGame.scoreP2);
     reversiGame.turnChange();
     console.log(reversiGame.turn);
-    var haveMovs = reversiGame.checkPossibleMovs();
-    console.log(haveMovs);
-    if (!haveMovs){
-      reversiGame.turnChange();
-      console.log(reversiGame.turn);
-    }
-    var endGame = reversiGame.checkEndGame();
-    console.log(endGame);
+  //  var haveMovs = reversiGame.checkPossibleMovs();
+    //console.log(haveMovs);
+  //  if (!haveMovs){
+    //  reversiGame.turnChange();
+      //console.log(reversiGame.turn);
+  //  }
+  //  var endGame = reversiGame.checkEndGame();
+    //console.log(endGame);
     updateBoard();
   });
 });
