@@ -2,14 +2,14 @@ html {
   background-image: url("http://www.lifewallpapers.net/data/out/368/6928247-wood-grain-wallpaper.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
 }
 
-.menu-container{
+.menu-container {
   width: 100%;
 }
 
-h1{
-  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+h1 {
   font-size: 92px;
   padding: 80px 50px;
   text-align: center;
@@ -17,15 +17,12 @@ h1{
   text-rendering: optimizeLegibility;
   color: #FFFFFF;
   letter-spacing: .1em;
-  text-shadow:
-    -1px -1px 1px #BB6B05,
-     2px 2px 1px #BB6B05;
+  text-shadow: -1px -1px 1px #BB6B05, 2px 2px 1px #BB6B05;
 }
 
-h3{
-  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+h3 {
   font-size: 60px;
-  padding:0;
+  padding: 0;
   margin: 10px;
   text-align: center;
   text-transform: uppercase;
@@ -33,16 +30,16 @@ h3{
   letter-spacing: .1em;
 }
 
-h5{
-  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+h5 {
   font-size: 30px;
   text-align: left;
   text-transform: uppercase;
   color: #FFFFFF;
   letter-spacing: .1em;
+  margin: 40px 0 0 0;
 }
 
-.start-btn a{
+.start-btn a {
   width: 300px;
   height: 300px;
   text-decoration: none;
@@ -57,20 +54,20 @@ h5{
 }
 
 #board {
-  background:#BB6B05;
-	width:430px;
-	height:410px;
-	padding:60px;
-	margin:0px auto 0px 400px;
+  background: #BB6B05;
+  width: 430px;
+  height: 410px;
+  padding: 60px;
+  margin: 0px auto 0px 400px;
   border-radius: 84px;
-  float:left;
+  float: left;
 }
 
 .box {
   background-color: #ED890A;
-	width:50px;
-	height:50px;
-	float:left;
+  width: 50px;
+  height: 50px;
+  float: left;
   border: 1px solid #BB6B05;
   margin: 0;
   padding: 0;
@@ -81,7 +78,7 @@ h5{
   height: 40px;
   border-radius: 50%;
   background: #FFFFFF;
-  margin:5px;
+  margin: 5px;
 }
 
 .play2 {
@@ -93,52 +90,46 @@ h5{
 }
 
 #scores {
-	width:200px;
-	height:50px;
-	margin:0px 0px 0 auto;
-  float: right;
+  width: 300px;
+  float: left;
+  margin-left: 5%;
 }
 
-.p1 {
-  width:100px;
-  height: 50px;
-  display: flex;
+#game-over{
+  position: absolute;
+  top: 160px;
+  left:300px;
+  display: none;
+}
+
+.p1, .p2 {
+  width: 100px;
+  padding: 0 60px 0 25px;
+  border: 2px solid #FFFFFF;
+  margin: 5% auto 5% 70px;
 }
 
 .white {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background: #FFFFFF;
-  margin-right: 30px;
-  padding: 0px;
-  float: left;
+  display: inline-block;
 }
 
-.p1-num{
-  width: 30px;
-  height: 30px;
+.p1-num, .p2-num {
+  display: inline-block;
   color: white;
-  font-weight: bold;
   font-size: 30px;
-  float:right;
-  text-align: center;
+  font-weight: bold;
+  margin-left: 10%;
+  margin-right: 0;
 }
 
 .black {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background: #000000;
-  margin: 0px;
-}
-
-.p2-num{
-  width: 30px;
-  height: 30px;
-  color: white;
-  font-weight: bold;
-  font-size: 30px;
-  float:right;
-  text-align: center;
+  display: inline-block;
 }

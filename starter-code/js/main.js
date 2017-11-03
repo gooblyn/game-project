@@ -78,21 +78,37 @@ $(document).ready(function(){
     $(".turn").text(reversiGame.turn);
   };
 
+  $("#00").click(function(){
+    var endGame = true;
+    if (endGame){
+      $("#game-over").css("display","");
+    }
+    ;});
   $(".box").click(function(){
+    // Taking the coordinates of the box clicked
     var pos = $(this).attr("id");
     var x = parseInt(pos.charAt(0));
     var y = parseInt(pos.charAt(1));
-    reversiGame.checkAndTurnTokens(x,y);
-    reversiGame.turnChange();
-    paintingScoreAndTurn();
+    var movs;
+    // Checks and turning the tokens
+    movs = reversiGame.checkAndTurnTokens(x,y);
+    // Change the turn if the box selected change tokenss
+    if (movs > 0){
+      reversiGame.turnChange();
+    }
+    // Checks if the neew player have movs
     var haveMovs = reversiGame.checkPossibleMovs();
-    console.log(haveMovs);
-    //if (!haveMovs){
-    //  reversiGame.turnChange();
-      //console.log(reversiGame.turn);
-  //  }
-  //  var endGame = reversiGame.checkEndGame();
-    //console.log(endGame);
+    // If there are no movs, changes the turn
+    if (!haveMovs){
+     reversiGame.turnChange();
+    }
+    // Checks if is the end of the game.
+    var endGame = reversiGame.checkEndGame();
+    if (endGame){
+      $("#game-over").css("display"," ");
+    }
+    // Paint all the elements of the board
+    paintingScoreAndTurn();
     updateBoard();
   });
 });

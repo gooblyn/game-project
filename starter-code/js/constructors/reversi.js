@@ -319,7 +319,7 @@ Reversi.prototype.changeTokensBottomLeft = function(x, y, num) {
 };
 
 Reversi.prototype.checkAndTurnTokens = function(x, y) {
-  // Checking the number of tokens turning in each direction
+  // Check the number of tokens turning in each direction
   var top = this.checkTokensTop(x, y);
   var bottom = this.checkTokensBottom(x, y);
   var left = this.checkTokensLeft(x, y);
@@ -329,7 +329,7 @@ Reversi.prototype.checkAndTurnTokens = function(x, y) {
   var bottomRight = this.checkTokensBottomRight(x, y);
   var bottomLeft = this.checkTokensBottomLeft(x, y);
 
-  // Changing the tokens in each direction
+  // Change the tokens in each direction
   if (top > 0) {
     this.changeTokensTop(x, y, top);
   }
@@ -354,6 +354,7 @@ Reversi.prototype.checkAndTurnTokens = function(x, y) {
   if (bottomLeft > 0) {
     this.changeTokensBottomLeft(x, y, bottomLeft);
   }
+  return top + bottom + left + right + topRight + topLeft + bottomRight + bottomLeft;
 };
 
 Reversi.prototype.countingTokens = function(){
