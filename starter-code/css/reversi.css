@@ -95,11 +95,14 @@ h5 {
   margin-left: 5%;
 }
 
-#game-over{
+#game-over {
   position: absolute;
   top: 160px;
-  left:300px;
-  display: none;
+  left: 300px;
+}
+
+.display {
+  display: none
 }
 
 .p1, .p2 {

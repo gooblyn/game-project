@@ -115,7 +115,7 @@ Reversi.prototype.checkTokensBottom = function(x, y) {
   var count = 0; // For counting the tokens you will turn
   var checking = true; //For knowing if you have to continue checking the boxes
   if (this.game.board[y][x].player === 0) {
-    while ((y < this.game.height-1) && (checking)) {
+    while ((y < this.game.height - 1) && (checking)) {
       if (this.checkLegalMovement(x, y, dir)) {
         count++;
         y++;
@@ -123,7 +123,7 @@ Reversi.prototype.checkTokensBottom = function(x, y) {
         checking = false;
       }
     }
-    if (y === this.game.height-1 || this.game.board[y + 1][x].player === 0) {
+    if (y === this.game.height - 1 || this.game.board[y + 1][x].player === 0) {
       count = 0;
     }
   }
@@ -173,7 +173,7 @@ Reversi.prototype.checkTokensRight = function(x, y) {
   var count = 0; // For counting the tokens you will turn
   var checking = true; //For knowing if you have to continue checking the boxes
   if (this.game.board[y][x].player === 0) {
-    while ((x < this.game.width-1) && (checking)) {
+    while ((x < this.game.width - 1) && (checking)) {
       if (this.checkLegalMovement(x, y, "right")) {
         count++;
         x++;
@@ -181,7 +181,7 @@ Reversi.prototype.checkTokensRight = function(x, y) {
         checking = false;
       }
     }
-    if (x === this.game.width-1 || this.game.board[y][x + 1].player === 0) {
+    if (x === this.game.width - 1 || this.game.board[y][x + 1].player === 0) {
       count = 0;
     }
   }
@@ -202,7 +202,7 @@ Reversi.prototype.checkTokensTopRight = function(x, y) {
   var count = 0; // For counting the tokens you will turn
   var checking = true; //For knowing if you have to continue checking the boxes
   if (this.game.board[y][x].player === 0) {
-    while ((y > 0) && (x < this.game.width-1) && (checking)) {
+    while ((y > 0) && (x < this.game.width - 1) && (checking)) {
       if (this.checkLegalMovement(x, y, "topRight")) {
         count++;
         y--;
@@ -211,7 +211,7 @@ Reversi.prototype.checkTokensTopRight = function(x, y) {
         checking = false;
       }
     }
-    if ((x === this.game.width-1 || y === 0) || this.game.board[y - 1][x + 1].player === 0) {
+    if ((x === this.game.width - 1 || y === 0) || this.game.board[y - 1][x + 1].player === 0) {
       count = 0;
     }
   }
@@ -232,7 +232,7 @@ Reversi.prototype.checkTokensBottomRight = function(x, y) {
   var count = 0; // For counting the tokens you will turn
   var checking = true; //For knowing if you have to continue checking the boxes
   if (this.game.board[y][x].player === 0) {
-    while ((y < this.game.height-1) && (x < this.game.width-1) && (checking)) {
+    while ((y < this.game.height - 1) && (x < this.game.width - 1) && (checking)) {
       if (this.checkLegalMovement(x, y, "bottomRight")) {
         count++;
         y++;
@@ -241,7 +241,7 @@ Reversi.prototype.checkTokensBottomRight = function(x, y) {
         checking = false;
       }
     }
-    if ((x === this.game.width-1 || y === this.game.height-1) || this.game.board[y + 1][x + 1].player === 0) {
+    if ((x === this.game.width - 1 || y === this.game.height - 1) || this.game.board[y + 1][x + 1].player === 0) {
       count = 0;
     }
   }
@@ -292,7 +292,7 @@ Reversi.prototype.checkTokensBottomLeft = function(x, y) {
   var count = 0; // For counting the tokens you will turn
   var checking = true; //For knowing if you have to continue checking the boxes
   if (this.game.board[y][x].player === 0) {
-    while ((y < this.game.height-1) && (x > 0) && (checking)) {
+    while ((y < this.game.height - 1) && (x > 0) && (checking)) {
       if (this.checkLegalMovement(x, y, "bottomLeft")) {
         count++;
         y++;
@@ -301,7 +301,7 @@ Reversi.prototype.checkTokensBottomLeft = function(x, y) {
         checking = false;
       }
     }
-    if ((x === 0 || y === this.game.height-1) || this.game.board[y + 1][x - 1].player === 0) {
+    if ((x === 0 || y === this.game.height - 1) || this.game.board[y + 1][x - 1].player === 0) {
       count = 0;
     }
   }
@@ -357,15 +357,15 @@ Reversi.prototype.checkAndTurnTokens = function(x, y) {
   return top + bottom + left + right + topRight + topLeft + bottomRight + bottomLeft;
 };
 
-Reversi.prototype.countingTokens = function(){
+Reversi.prototype.countingTokens = function() {
   this.scoreP1 = 0;
   this.scoreP2 = 0;
-  for (var i = 0; i < this.game.height; i++){
-    for (var j = 0; j < this.game.width; j++){
-      if (this.game.board[i][j].player === 1){
+  for (var i = 0; i < this.game.height; i++) {
+    for (var j = 0; j < this.game.width; j++) {
+      if (this.game.board[i][j].player === 1) {
         this.scoreP1++;
       }
-      if (this.game.board[i][j].player === 2){
+      if (this.game.board[i][j].player === 2) {
         this.scoreP2++;
       }
     }
@@ -374,9 +374,11 @@ Reversi.prototype.countingTokens = function(){
 
 Reversi.prototype.checkPossibleMovs = function() {
   var top, bottom, left, right, topRight, topLeft, bottomLeft, bottomRight;
-  var x = 0, y = 0, total = 0;
+  var x = 0,
+    y = 0,
+    total = 0;
   var mov = false;
-  while (y < this.game.height && !mov){
+  while (y < this.game.height && !mov) {
     while (x < this.game.width && !mov) {
       top = this.checkTokensTop(x, y);
       bottom = this.checkTokensBottom(x, y);
@@ -386,9 +388,12 @@ Reversi.prototype.checkPossibleMovs = function() {
       topLeft = this.checkTokensTopLeft(x, y);
       bottomRight = this.checkTokensBottomRight(x, y);
       bottomLeft = this.checkTokensBottomLeft(x, y);
-      total= top + bottom + left + right + topRight + topLeft + bottomRight + bottomLeft;
-      if (total > 0){mov = true;}
-      else {x++;}
+      total = top + bottom + left + right + topRight + topLeft + bottomRight + bottomLeft;
+      if (total > 0) {
+        mov = true;
+      } else {
+        x++;
+      }
     }
     x = 0;
     y++;
@@ -396,25 +401,29 @@ Reversi.prototype.checkPossibleMovs = function() {
   return mov;
 };
 
-Reversi.prototype.checkEndGame = function(){
+Reversi.prototype.checkEndGame = function() {
   var end;
   var freeBox = false;
-  var x=0; y=0;
-  while (y < this.game.height && !freeBox){
-    while (x < this.game.width && !freeBox){
-      if (this.game.board[y][x].player === 0){freeBox = true;}
-      else{x++;}
+  var x = 0;
+  y = 0;
+  while (y < this.game.height && !freeBox) {
+    while (x < this.game.width && !freeBox) {
+      if (this.game.board[y][x].player === 0) {
+        freeBox = true;
+      } else {
+        x++;
+      }
     }
-    x=0; y++;
+    x = 0;
+    y++;
   }
   var movsPlay1, movsPlay2;
-  if (this.turn === "Player2"){
+  if (this.turn === "Player2") {
     movsPlay2 = this.checkPossibleMovs();
     this.turnChange();
     movsPlay1 = this.checkPossibleMovs();
     this.turnChange();
-  }
-  else {
+  } else {
     movsPlay1 = this.checkPossibleMovs();
     this.turnChange();
     movsPlay2 = this.checkPossibleMovs();

@@ -54,22 +54,22 @@ function Board(type) {
   };
 };
 
-Board.prototype.inicialize = function (){
+Board.prototype.inicialize = function() {
   var width = this.width;
   var height = this.height;
-  for (var i = 0; i < height; i++){
+  for (var i = 0; i < height; i++) {
     for (var j = 0; j < width; j++) {
       this.board[i][j].x = j;
       this.board[i][j].y = i;
       // Inicialize player1 boxes - white ones
-      if (((i == (height/2)-1) && (j == (width/2)-1)) ||
-          ((i == height/2) && (j == width/2))){
-            this.board[i][j].player = 1;
+      if (((i == (height / 2) - 1) && (j == (width / 2) - 1)) ||
+        ((i == height / 2) && (j == width / 2))) {
+        this.board[i][j].player = 1;
       }
       // Inicialize player2 boxes - black ones
-      if (((i == (height/2)-1) && (j == width/2)) ||
-          ((i == height/2) && (j == (width/2)-1))){
-            this.board[i][j].player = 2;
+      if (((i == (height / 2) - 1) && (j == width / 2)) ||
+        ((i == height / 2) && (j == (width / 2) - 1))) {
+        this.board[i][j].player = 2;
       }
     }
   }

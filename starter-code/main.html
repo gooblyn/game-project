@@ -1,34 +1,41 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <link type="text/css" rel="stylesheet" href="./css/reversi.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="./js/constructors/box.js"></script>
-    <script src="./js/constructors/board.js"></script>
-    <script src="./js/constructors/reversi.js"></script>
-    <script src="./js/main.js"></script>
-    <title>ROVERSI</title>
-  </head>
-  <body>
-    <h3>ROVERSI</h3>
-    <div id="board">
-    </div>
-    <div id="scores">
-      <h5>scores:</h5>
-      <div class="p1">
-        <div class="white"></div>
-        <div class="p1-num"><p></p></div>
+
+<head>
+  <meta charset="utf-8">
+  <link type="text/css" rel="stylesheet" href="./css/reversi.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="./js/constructors/box.js"></script>
+  <script src="./js/constructors/board.js"></script>
+  <script src="./js/constructors/reversi.js"></script>
+  <script src="./js/main.js"></script>
+  <title>ROVERSI</title>
+</head>
+
+<body>
+  <h3>ROVERSI</h3>
+  <div id="board">
+  </div>
+  <div id="scores">
+    <h5>scores:</h5>
+    <div class="p1">
+      <div class="white"></div>
+      <div class="p1-num">
+        <p></p>
       </div>
-      <div class="p2">
-        <div class="black"></div>
-        <div class="p2-num"><p></p></div>
+    </div>
+    <div class="p2">
+      <div class="black"></div>
+      <div class="p2-num">
+        <p></p>
       </div>
-      <h5 class="turn"></h5>
     </div>
-    <audio autoplay><source src="./music/ascensor.mp3"></audio>
-    <div id="game-over">
-      <h1>game ends</h1>
-    </div>
-  </body>
+    <h5 class="turn"></h5>
+  </div>
+  <audio autoplay><source src="./music/ascensor.mp3"></audio>
+  <div id="game-over" class="display">
+    <h1>game ends</h1>
+  </div>
+</body>
+
 </html>
